@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @events.each do |event| %>
+    <% current_user.my_events.each do |event| %>
       <tr>
         <td><%= event.name %></td>
         <td><%= event.date %></td>
