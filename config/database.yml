@@ -17,9 +17,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: count_down_yammer_development
+  database: countdown_yammer_development
   pool: 5
-  username: count_down_yammer
+  username: countdown_yammer
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -46,15 +46,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: count_down_yammer_test
+  database: countdown_yammer_test
   pool: 5
-  username: count_down_yammer
+  username: countdown_yammer
   password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: count_down_yammer_production
+  database: countdown_yammer_production
   pool: 5
-  username: count_down_yammer
+  username: countdown_yammer
   password:
