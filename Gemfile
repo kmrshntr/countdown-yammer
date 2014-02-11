@@ -48,7 +48,7 @@ group :development do
   gem 'rails_layout'
 end
 
-gem 'devise'
+gem 'bootstrap-datepicker-rails'
 gem 'omniauth'
 gem 'omniauth-yammer'
 
