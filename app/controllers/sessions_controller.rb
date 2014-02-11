@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     auth = request.env["omniauth.auth"]
     user = User.find_or_create_by(email:auth['info']['email'])
     user.name = auth['info']['nickname']
+    user.token = auth[:credentials][:token]
     user.save
     session[:user_id] = user.id
     redirect_to root_path, :notice => "Hello #{user.name}."
