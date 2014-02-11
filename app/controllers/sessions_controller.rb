@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+
+  skip_before_filter :authorize, :only => [:create]
+
   def create
     auth = request.env["omniauth.auth"]
     user = User.find_or_create_by(email:auth['info']['email'])
@@ -10,6 +13,6 @@ class SessionsController < ApplicationController
 
   def destroy
 	reset_session
-    redirect_to root_path, :notice => "You successfully logged out."
+  redirect_to root_path, :notice => "You successfully logged out."
   end
 end
