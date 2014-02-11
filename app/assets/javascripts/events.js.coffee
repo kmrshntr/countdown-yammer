@@ -2,9 +2,12 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$ -> $('#event_date').datepicker({
+ready = -> $('#event_date').datepicker({
     keyboardNavigation: false,
     forceParse: false,
     todayHighlight: true,
     format: 'yyyy/mm/dd'
 });
+
+$(document).ready(ready)
+$(document).on('page:load', ready)
