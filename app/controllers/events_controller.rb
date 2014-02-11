@@ -4,7 +4,6 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
   end
 
   # GET /events/1
@@ -40,7 +39,7 @@ class EventsController < ApplicationController
 
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
-  def update
+  def update 
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
@@ -65,7 +64,8 @@ class EventsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      @event = Event.find(params[:id])
+      @event = Event.where(id:params[:id]).where(owner_id: current_user.id).first
+      raise ActionController::RoutingError.new('Not Found') unless @event
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
