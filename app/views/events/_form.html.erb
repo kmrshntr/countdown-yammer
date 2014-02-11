@@ -11,15 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="input-group">
+    <span class="input-group-addon"><%= f.label :name %></span>
+    <%= f.text_field :name, class:"form-control",  placeholder: "Event Name", size:20%>
   </div>
-  <div class="field" id="date-field">
-    <%= f.label :date %><br>
-    <%= f.text_field :date, placeholder: "yyyy/mm/dd"%>
+
+  <div class="input-group">
+    <span class="input-group-addon"><%= f.label :date %></span>
+    <%= f.text_field :date, class:"form-control", placeholder: "yyyy/mm/dd", size:10%>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Create', class: "btn btn-primary"%>
   </div>
 <% end %>

@@ -10,7 +10,7 @@
       </button>
       <%= link_to 'Home', root_path, class: 'navbar-brand' %>
       <% if current_user  %>
-      <%= link_to 'Sign out', 'sessions/destroy', class: 'navbar-brand' %>
+      <%= link_to 'Sign out', '/sessions/destroy', class: 'navbar-brand' %>
       <% else%>
       <%= link_to 'Sign in with Yammer', '/auth/yammer', class: 'navbar-brand' %>
       <% end %>
