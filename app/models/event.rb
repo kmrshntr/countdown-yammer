@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
      self.all.order(:created_at).each do |event|
        client = Yammer::Client.new(:access_token  => event.owner.token)
        days = (event.date - Time.now.utc.beginning_of_day).to_i / (60 * 60 * 24)
-       client.create_message("#{days} days to #{event.name}.")
+       client.create_message("#{event.name}まであと#{days}日！")
      end
   end
 
