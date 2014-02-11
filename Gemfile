@@ -53,3 +53,5 @@ gem 'omniauth'
 gem 'omniauth-yammer'
 
 gem 'rails_12factor', group: :production
+
+gem 'yam'
