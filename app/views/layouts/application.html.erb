@@ -2,19 +2,23 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Countdown Yammer" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Countdown Yammer" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "Countdown to Hawaii" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Countdown to Hawaii" %>">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
+    <div id="center-container">
+      <header>
+        <%= render 'layouts/navigation' %>
+      </header>
+      <main role="main">
+         <%= render 'layouts/messages' %>
+         <%= yield %>
+      </main>
+      <footer>
+<small>Photo by <a href="http://www.flickr.com/photos/ornellas/">Justin Ornellas</a> / <a href="http://creativecommons.org/licenses/by/2.0/">CC BY</a></small></footer>
+    </div>
   </body>
 </html>

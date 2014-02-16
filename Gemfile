@@ -5,9 +5,6 @@ gem 'rails', '4.0.2'
 
 gem 'pg'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -43,11 +40,12 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'bootstrap-sass'
-group :development do
-  gem 'rails_layout'
-end
+gem 'less-rails'
+gem 'less-rails-bootstrap'
 
+group :assets do
+  gem 'therubyracer'
+end
 gem 'bootstrap-datepicker-rails'
 gem 'omniauth'
 gem 'omniauth-yammer'

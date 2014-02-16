@@ -9,11 +9,11 @@ class SessionsController < ApplicationController
     user.token = auth[:credentials][:token]
     user.save
     session[:user_id] = user.id
-    redirect_to root_path, :notice => "Hello #{user.name}."
+    redirect_to events_path, :notice => "Hello #{user.name}."
   end
 
   def destroy
-	reset_session
-  redirect_to root_path, :notice => "You successfully logged out."
+    reset_session
+    redirect_to root_path, :notice => "You successfully logged out."
   end
 end

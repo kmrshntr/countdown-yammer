@@ -1,0 +1,10 @@
+<div class="jumbotron">
+<h1>Countdown to Hawaii</h1>
+<p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+
+<% if current_user %>
+  <p><%= link_to "Show everyone's events", events_path, class: "btn btn-primary btn-lg" %></p>
+<% else %>
+  <p><%= link_to 'Sign in with Yammer', '/auth/yammer', class: "btn btn-primary btn-lg" %></p>
+<% end %>
+</div>

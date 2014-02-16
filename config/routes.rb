@@ -1,13 +1,15 @@
 CountdownYammer::Application.routes.draw do
 
+  get "/about", :to => 'welcome#about'
   resources :events
-  root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'events#index'
+  root 'welcome#index'
+
+  get 'sessions/create'
 
   get '/auth/yammer/callback', :to => 'sessions#create'
   get "sessions/destroy"

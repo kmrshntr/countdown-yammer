@@ -1,26 +1,29 @@
-<%= form_for(@event) do |f| %>
-  <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<div class="well">
+  <fieldset>
+    <legend>Event</legend>
+    <%= form_for(@event, class: "form-horizontal") do |f| %>
+      <% if @event.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-      <ul>
-      <% @event.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+          <ul>
+          <% @event.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="input-group">
-    <span class="input-group-addon"><%= f.label :name %></span>
-    <%= f.text_field :name, class:"form-control",  placeholder: "Event Name", size:20%>
-  </div>
-
-  <div class="input-group">
-    <span class="input-group-addon"><%= f.label :date %></span>
-    <%= f.text_field :date, class:"form-control", placeholder: "yyyy/mm/dd", size:10%>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Save', class: "btn btn-primary"%>
-  </div>
-<% end %>
+      <div class="form-group">
+        <%= f.label :name, class: 'control-label' %><br>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :date %><br>
+        <%= f.date_select :date %>
+      </div>
+      <div class="actions">
+        <%= f.submit 'Save', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </fieldset>
+</div>
