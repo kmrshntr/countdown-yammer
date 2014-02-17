@@ -17,5 +17,11 @@
 //= require twitter/bootstrap
 
 $(document).ready(function(){
-
+    jQuery('#maximage').maximage();
 });
+
+$(document).bind("page:load", function() {
+    jQuery('#maximage').maximage();
+});
+
+

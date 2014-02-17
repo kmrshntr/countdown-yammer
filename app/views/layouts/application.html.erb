@@ -9,16 +9,17 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div id="center-container">
-      <header>
-        <%= render 'layouts/navigation' %>
-      </header>
-      <main role="main">
-         <%= render 'layouts/messages' %>
-         <%= yield %>
-      </main>
-      <footer>
-<small>Photo by <a href="http://www.flickr.com/photos/ornellas/">Justin Ornellas</a> / <a href="http://creativecommons.org/licenses/by/2.0/">CC BY</a></small></footer>
+    <div id="maximage">
+      <%= image_tag('top.jpg', alt: "", width: 1024, height: 678) %>
     </div>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main">
+       <%= render 'layouts/messages' %>
+       <%= yield %>
+    </main>
+    <footer >
+    <small>Photo by <a href="http://www.flickr.com/people/ornellas/">Justin Ornellas</a> / <a href="http://creativecommons.org/licenses/by/2.0/">CC BY</a></small></footer>
   </body>
 </html>

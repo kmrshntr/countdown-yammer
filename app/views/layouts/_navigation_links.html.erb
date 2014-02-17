@@ -1,5 +1,5 @@
 <li>  <% if current_user  %></li>
-<li>  <%= link_to 'All Events', events_path %></li>
+<li>  <%= link_to "Everyone's Events", events_path %></li>
 <li>  <%= link_to 'Sign out', '/sessions/destroy' %></li>
 <li>  <% else%></li>
 <li>  <%= link_to 'Sign in with Yammer', '/auth/yammer' %></li>
