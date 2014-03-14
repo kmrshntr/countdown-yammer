@@ -53,3 +53,5 @@ gem 'omniauth-yammer'
 gem 'rails_12factor', group: :production
 
 gem 'yam'
+
+gem 'event-calendar', :require => 'event_calendar'

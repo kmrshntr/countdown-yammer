@@ -1,7 +1,9 @@
 CountdownYammer::Application.routes.draw do
 
   get "/about", :to => 'welcome#about'
-  resources :events
+  resources :events do
+    get '/advent_calendar(/:year(/:month))' => 'advent_calendar#index', :as => :advent_calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}    
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
